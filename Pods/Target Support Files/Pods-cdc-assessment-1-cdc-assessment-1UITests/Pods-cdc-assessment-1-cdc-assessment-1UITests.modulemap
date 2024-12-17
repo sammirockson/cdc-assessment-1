@@ -1,0 +1,6 @@
+framework module Pods_cdc_assessment_1_cdc_assessment_1UITests {
+  umbrella header "Pods-cdc-assessment-1-cdc-assessment-1UITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

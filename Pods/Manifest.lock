@@ -1,0 +1,42 @@
+PODS:
+  - HandyJSON (5.0.4-beta)
+  - RxCocoa (6.8.0):
+    - RxRelay (= 6.8.0)
+    - RxSwift (= 6.8.0)
+  - RxRelay (6.8.0):
+    - RxSwift (= 6.8.0)
+  - RxSwift (6.8.0)
+  - SnapKit (5.0.1)
+
+DEPENDENCIES:
+  - HandyJSON (from `https://github.com/Miles-Matheson/HandyJSON.git`)
+  - RxCocoa (~> 6.8.0)
+  - RxSwift (~> 6.8.0)
+  - SnapKit (~> 5.0.0)
+
+SPEC REPOS:
+  trunk:
+    - RxCocoa
+    - RxRelay
+    - RxSwift
+    - SnapKit
+
+EXTERNAL SOURCES:
+  HandyJSON:
+    :git: https://github.com/Miles-Matheson/HandyJSON.git
+
+CHECKOUT OPTIONS:
+  HandyJSON:
+    :commit: de8a7126d2270da55cea3cb45dadffcfd002dbbe
+    :git: https://github.com/Miles-Matheson/HandyJSON.git
+
+SPEC CHECKSUMS:
+  HandyJSON: a9c67202df97805a0ba4a00e30b50e9a30ac28f3
+  RxCocoa: 2d33c1e1e5d66492052ad46b11024ae287572880
+  RxRelay: 335c78b926a2aea8d863a6d25f1ed3b5ad8e8705
+  RxSwift: 4e28be97cbcfeee614af26d83415febbf2bf6f45
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+
+PODFILE CHECKSUM: ffd907a178def36e2646d18937f87e2e71cae277
+
+COCOAPODS: 1.16.2

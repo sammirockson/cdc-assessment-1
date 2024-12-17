@@ -6,20 +6,15 @@
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
 		<false/>
-		<key>UISceneConfigurations</key>
-		<dict>
-			<key>UIWindowSceneSessionRoleApplication</key>
-			<array>
-				<dict>
-					<key>UISceneConfigurationName</key>
-					<string>Default Configuration</string>
-					<key>UISceneDelegateClassName</key>
-					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
-					<key>UISceneStoryboardFile</key>
-					<string>Main</string>
-				</dict>
-			</array>
-		</dict>
 	</dict>
+    <key>UIAppFonts</key>
+    <array>
+        <string>AirbnbCerealBold.ttf</string>
+        <string>AirbnbCerealBlack.ttf</string>
+        <string>AirbnbCerealBook.ttf</string>
+        <string>AirbnbCerealExtraBold.ttf</string>
+        <string>AirbnbCerealLight.ttf</string>
+        <string>AirbnbCerealMedium.ttf</string>
+    </array>
 </dict>
 </plist>
