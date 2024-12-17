@@ -2,7 +2,7 @@
 //  Extensions.swift
 //  cdc-assessment-1
 //
-//  Created by Rock$on on 2024/12/17.
+//  Created by Samuel Opoku-Agyemang on 2024/12/17.
 //
 
 import UIKit
@@ -21,7 +21,6 @@ var adaptBigScreenSizeScale:CGFloat = {
     if screenWidth > defaultWidth {
         scale = screenWidth / defaultWidth
     }
-    
     return scale
 }()
 
@@ -94,6 +93,24 @@ public extension UIDevice {
     }
     
 }
+
+
+
+
+
+extension Bundle {
+    var cryptoJson: String? {
+        guard let filePath = Bundle.main.path(forResource: "crypto_list", ofType: ".json") else { return nil }
+        let url = URL(fileURLWithPath: filePath)
+        guard let data = try? Data(contentsOf: url),
+        let jsonStr = String(data: data, encoding: .utf8) else { return nil }
+        return jsonStr
+    }
+}
+
+
+
+
 
 
 enum FontType: String {

@@ -10,7 +10,7 @@ target 'cdc-assessment-1' do
     pod 'RxCocoa', '~> 6.8.0'
     pod 'SnapKit', '~> 5.0.0'
     pod 'HandyJSON', :git => 'https://github.com/Miles-Matheson/HandyJSON.git'
-#    pod 'HandyJSON', '~> 5.0.1'
+    pod "RxGesture", '~> 4.0.4'
 
   target 'cdc-assessment-1Tests' do
     inherit! :search_paths
