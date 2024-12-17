@@ -28,6 +28,7 @@ class CryptoListViewController: UIViewController {
     }
     
     private func bindViewModel() {
+        // Binds tap gesture to crypto button
         loadCryptoBtn
             .rx.tapGesture()
             .when(.recognized)
@@ -43,8 +44,21 @@ class CryptoListViewController: UIViewController {
                 }
         }.disposed(by: bag)
         
-        viewModel.result.bind(to: cryptoTableView.rx.items(cellIdentifier: CryptoListTableViewCell.identifier, cellType: CryptoListTableViewCell.self)) { row, item, cell in
-            cell.configure(item)
+        // Binds model to tableView
+        viewModel.result.bind(
+            to: cryptoTableView.rx.items(
+                cellIdentifier: CryptoListTableViewCell.identifier,
+                cellType: CryptoListTableViewCell.self)
+        ) { row, model, cell in
+            cell.configure(model)
+        }.disposed(by: bag)
+        
+        
+        cryptoTableView.rx.modelSelected(CryptoModel.self).bind { [weak self] model in
+            guard let self = self else { return }
+            // Navigate to the detail page
+            let cryptoDetatailVC = CryptoDetailViewController(model)
+            self.navigationController?.pushViewController(cryptoDetatailVC, animated: true)
         }.disposed(by: bag)
     }
     

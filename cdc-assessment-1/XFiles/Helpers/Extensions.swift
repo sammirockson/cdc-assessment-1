@@ -7,6 +7,19 @@
 
 import UIKit
 
+
+extension Bundle {
+    var cryptoJson: String? {
+        guard let filePath = Bundle.main.path(forResource: "crypto_list", ofType: ".json") else { return nil }
+        let url = URL(fileURLWithPath: filePath)
+        guard let data = try? Data(contentsOf: url),
+        let jsonStr = String(data: data, encoding: .utf8) else { return nil }
+        return jsonStr
+    }
+}
+
+
+
 let screenWidth = UIScreen.main.bounds.width
 let screenHeight = UIScreen.main.bounds.height
 let defaultWidth: CGFloat = UIDevice.isPad ? 810.0 : 375.0
@@ -95,18 +108,6 @@ public extension UIDevice {
 }
 
 
-
-
-
-extension Bundle {
-    var cryptoJson: String? {
-        guard let filePath = Bundle.main.path(forResource: "crypto_list", ofType: ".json") else { return nil }
-        let url = URL(fileURLWithPath: filePath)
-        guard let data = try? Data(contentsOf: url),
-        let jsonStr = String(data: data, encoding: .utf8) else { return nil }
-        return jsonStr
-    }
-}
 
 
 
