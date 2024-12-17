@@ -128,3 +128,11 @@ extension UITableViewCell {
         return String(describing: self)
     }
 }
+
+
+extension UIViewController {
+    func navigate(_ toVC: UIViewController, isAnimated: Bool = true) {
+        self.navigationController?.pushViewController(toVC, animated: isAnimated)
+
+    }
+}

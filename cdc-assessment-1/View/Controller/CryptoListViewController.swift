@@ -28,7 +28,7 @@ class CryptoListViewController: UIViewController {
     }
     
     private func bindViewModel() {
-        // Binds tap gesture to crypto button
+        // Binds tap gesture to load crypto button
         loadCryptoBtn
             .rx.tapGesture()
             .when(.recognized)
@@ -53,24 +53,25 @@ class CryptoListViewController: UIViewController {
             cell.configure(model)
         }.disposed(by: bag)
         
-        
+        // Listens for selection
         cryptoTableView.rx.modelSelected(CryptoModel.self).bind { [weak self] model in
             guard let self = self else { return }
-            // Navigate to the detail page
+            // Navigates to the crypto detail vc
             let cryptoDetatailVC = CryptoDetailViewController(model)
-            self.navigationController?.pushViewController(cryptoDetatailVC, animated: true)
+            self.navigate(cryptoDetatailVC)
         }.disposed(by: bag)
     }
     
     
     func showAlert() {
-      let alertController =  UIAlertController(title: "Load Crypto With Error", message: "", preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "Dismiss", style: .cancel))
-        self.present(alertController, animated: true)
+      let alertVC = UIAlertController(title: "Load Crypto With Error", message: "", preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: "Dismiss", style: .cancel))
+        self.present(alertVC, animated: true)
     }
     
 }
 
+// MARK: - Setup UI elements
 extension CryptoListViewController {
     
     private func setUpUI() {

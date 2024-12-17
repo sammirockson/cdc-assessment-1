@@ -27,12 +27,13 @@ class CryptoListTableViewCell: UITableViewCell {
     }
 }
 
+// MARK: - Create UI elements
 extension CryptoListTableViewCell {
     private func createUI() {
         titleLabel = Label(name: "", color: .black, font: .regular, size: 15)
         contentView.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { make in
-            make.left.equalToSuperview().offset(15.all)
+            make.left.right.equalToSuperview().inset(15.all)
             make.centerY.equalToSuperview()
         }
         
